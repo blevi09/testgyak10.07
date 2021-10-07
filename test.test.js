@@ -11,8 +11,17 @@ describe('test for ATM class', () => {
           expect(myATM.getBalance()).toBe(3000);
         });
 
-        /*test ('constructor work', () => {
-            
-        });*/
+        test ('payBills should work', () =>{
+            expect(myATM.getBalance()).toBe(3000);
+            myATM.payBills();
+            expect(myATM.getBalance()).toBe(3000 - myATM.bills);
+        });
+
+        test ('payBills x2 should work', () =>{
+            expect(myATM.getBalance()).toBe(3000);
+            myATM.payBills();
+            myATM.payBills();
+            expect(myATM.getBalance()).toBe(3000-(2*myATM.bills));
+        });
     });
 });
